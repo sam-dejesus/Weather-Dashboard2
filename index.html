@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1 >Weather Dashboard</h1>
+        <p id="today"></p>
+    </header>
+    <main class="d-flex flex-row">
+        <div class="searchDiv col-4">
+            <div class="ms-3  d-flex flex-column px-5">
+            <p class="S-B-C">Search by city</p>
+            <input type="text" class="mb-2" id="input">
+            <button id="searchBtn" class=" btn bg-body mb-2">Search</button>
+            </div>
+
+        </div>
+        <div class="forecast col-8 d-flex flex-column align-items-center ms-3 " id="forecast">
+
+            <div class="headline col-12 d-flex justify-content-start flex-row ms-5 mt-3">
+             <h2 id="name" class=" name"></h2>
+            <img src="" alt="" class="" id="img">
+            
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" id="status"></li>
+                <li class="list-group-item list-group-item-primary" id="windSpeed"></li>
+                <li class="list-group-item list-group-item" id="temp"></li>
+                <li class="list-group-item list-group-item-primary" id="feelsLike"></li>
+                <li class="list-group-item list-group-item" id="humid"></li>
+                <li class="list-group-item list-group-item-primary" id="low"></li>
+                <li class="list-group-item list-group-item" id="high"></li>
+                <!-- <li class="list-group-item list-group-item-primary"></li>
+                <li class="list-group-item list-group-item"></li> -->
+              </ul>
+  
+              <div class="forecast d-flex flex-row" id="forecast5">
+
+              </div>
+
+        </div>
+    </main>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>

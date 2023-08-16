@@ -1,0 +1,68 @@
+body{
+    max-width: 100%;
+}
+header{
+    background-image: linear-gradient(to right, rgb(52, 167, 243), rgb(72, 170, 231), rgb(58, 126, 163));
+    height: 100px;
+    width: 100%;
+    color: aliceblue;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    flex-direction: column;
+    padding-top: 20px;
+   
+ }
+ main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to bottom, rgb(164, 211, 253), lightblue, aliceblue);
+}
+
+.searchDiv{
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.S-B-C{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+.forecast{
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);   
+}  
+.name{
+    font-size: 50px;
+}
+.list-group{
+    min-width: 90%;
+}
+#forecast5{
+
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    
+}
+/* forecast day is the class added to the 5 day forecast elements that are created in javascript */
+.forecast-day{
+    width: 150px;
+ font-size: 13px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgb(0, 207, 207),rgb(193, 218, 239) );
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+}
