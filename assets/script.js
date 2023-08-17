@@ -21,6 +21,10 @@ var date = currentDate.format("dddd MMM. D, YYYY")
 
 today.html(date)
 
+if(input.val() === ""){
+    fetchDataAndDisplay("Orlando")
+}
+
 
 
 
@@ -52,8 +56,8 @@ searchBtn.click(()=>{
           temp.html("the tempeture for today is " + data.list[0].main.temp + "℉")  
           feelsLike.html("it feels like " + data.list[0].main.feels_like + "℉")
           humid.html("The humidity is " + data.list[0].main.humidity+'%')
-          low.html('the low tempeture for today is ' + data.list[0].main.temp_min)
-          high.html('the high tempeture for today is ' + data.list[0].main.temp_min)
+          low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
+          high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
          img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
         name.html(cityName)
         var currentDate = dayjs();
@@ -125,8 +129,8 @@ function weatherbtn(lat, lon){
         temp.html("the tempeture for today is " + data.list[0].main.temp + "℉")  
         feelsLike.html("it feels like " + data.list[0].main.feels_like + "℉")
         humid.html("The humidity is " + data.list[0].main.humidity+'%')
-        low.html('the low tempeture for today is ' + data.list[0].main.temp_min)
-        high.html('the high tempeture for today is ' + data.list[0].main.temp_min)
+        low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
+        high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
        img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
       name.html(cityName)
     
@@ -159,8 +163,8 @@ function fetchDataAndDisplay(city) {
                         temp.html("the tempeture for today is " + data.list[0].main.temp + "℉")  
                         feelsLike.html("it feels like " + data.list[0].main.feels_like + "℉")
                         humid.html("The humidity is " + data.list[0].main.humidity+'%')
-                        low.html('the low tempeture for today is ' + data.list[0].main.temp_min)
-                        high.html('the high tempeture for today is ' + data.list[0].main.temp_min)
+                        low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
+                        high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
                        img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
                       name.html(cityName)
                       var currentDate = dayjs();

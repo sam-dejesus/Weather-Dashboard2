@@ -15,6 +15,32 @@ header{
     padding-top: 20px;
    
  }
+ .title{
+    gap: 10px;
+
+ }
+
+ i{
+  
+ }
+ .sunDiv{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation-name: rotate360;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+ }
+ @keyframes rotate360 {
+    0%   {  transform: rotate(0deg); }
+    25%  {  transform: rotate(90deg); }
+    50%  {  transform: rotate(180deg); }
+    75%  {  transform: rotate(270deg); }
+    100% {  transform: rotate(360deg); }
+}
  main{
     width: 100%;
     height: 100vh;
@@ -25,15 +51,23 @@ header{
 
 .searchDiv{
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .S-B-C{
+    margin-top: 20px;
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 25px;
     
 }
+#searchBtn{
+    background-color: rgb(0, 174, 255);
+}
+#searchBtn:hover{
+    background-color: rgb(31, 184, 255);
+}
+
 
 #history{
     margin-top: 20px;
@@ -51,9 +85,12 @@ border: none;
 .pastBtn:hover{
     background-color: rgb(150, 255, 220);
 }
+.headline{
+    width: 100%;
+}
 .forecast{
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.1);   
+    background-color: rgba(255, 255, 255, 0.2);   
 }  
 .name{
     font-size: 50px;
@@ -70,8 +107,9 @@ border: none;
 }
 /* forecast day is the class added to the 5 day forecast elements that are created in javascript */
 .forecast-day{
+    
     width: 150px;
- font-size: 13px;
+   font-size: 13px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -79,6 +117,6 @@ border: none;
     background-image: linear-gradient(to bottom, rgb(0, 207, 207),rgb(193, 218, 239) );
     border-radius: 20px;
     padding: 5px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 10px 10px 20px rgba(56, 56, 56, 0.3);
     margin-left: 10px;
 }
