@@ -34,14 +34,14 @@ searchBtn.click(()=>{
     var city = input.val().trim();
     city = city.charAt(0).toUpperCase() + city.slice(1);
 
-    var url = "http://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=1&appid=78da9311b6649705d4159cf6966655ff"
+    var url = "https://api.openweathermap.org/geo/1.0/direct?q= "+ city + "&limit=1&appid=78da9311b6649705d4159cf6966655ff"
     fetch(url)
 .then(response => response.json())
 .then(data =>{
     var {lat, lon } = data[0]
     var latValue = lat;
     var lonValue = lon;
-    var weather = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latValue + "&lon=" + lonValue + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff"
+    var weather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latValue + "&lon=" + lonValue + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff"
     //
     forecast.empty()
     fetch(weather)
@@ -58,7 +58,7 @@ searchBtn.click(()=>{
           humid.html("The humidity is " + data.list[0].main.humidity+'%')
           low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
           high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
-         img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
+         img.attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
         name.html(cityName)
         var currentDate = dayjs();
         for (var i = 1; i <= 5; i++){
@@ -72,7 +72,7 @@ searchBtn.click(()=>{
             var p1 = $('<p>').text('Temp: '+ temperature2)
             var p2 = $('<p>').text('Windspeed: '+ windspeed2 +' MPH')
             var p3 = $('<p>').text('Humidity: '+humidity2 +'%')
-            var img2 = $('<img>').attr("src", "http://openweathermap.org/img/wn/" + icon2 + ".png")
+            var img2 = $('<img>').attr("src", "https://openweathermap.org/img/wn/" + icon2 + ".png")
             var div = $('<div>').addClass("forecast-day").append(h3, img2, p1, p2, p3)
             forecast.append(div)
         }
@@ -99,7 +99,7 @@ searchBtn.click(()=>{
 
 
 function weatherbtn(lat, lon){
-    var weather = "http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff"
+    var weather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff"
     fetch(weather)
     .then((response => response.json()))
     .then(data => {
@@ -115,7 +115,7 @@ function weatherbtn(lat, lon){
         var p1 = $('<p>').text('Temp: '+ temperature)
         var p2 = $('<p>').text('Windspeed: '+windspeed+' MPH')
         var p3 = $('<p>').text('Humidity: '+humidity+'%')
-        var img = $('<img>').attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
+        var img = $('<img>').attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
         var div = $('<div>').addClass("forecast-day").append(h3, img, p1, p2, p3)
         forecast.append(div)
     
@@ -131,7 +131,7 @@ function weatherbtn(lat, lon){
         humid.html("The humidity is " + data.list[0].main.humidity+'%')
         low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
         high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
-       img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
+       img.attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
       name.html(cityName)
     
         }
@@ -141,7 +141,7 @@ function weatherbtn(lat, lon){
 
 function fetchDataAndDisplay(city) {
 
-    var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=78da9311b6649705d4159cf6966655ff";
+    var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=78da9311b6649705d4159cf6966655ff";
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -149,7 +149,7 @@ function fetchDataAndDisplay(city) {
             var { lat, lon } = data[0];
             var latValue = lat;
             var lonValue = lon;
-            var weather = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latValue + "&lon=" + lonValue + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff";
+            var weather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latValue + "&lon=" + lonValue + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff";
 
             forecast.empty();
             fetch(weather)
@@ -165,7 +165,7 @@ function fetchDataAndDisplay(city) {
                         humid.html("The humidity is " + data.list[0].main.humidity+'%')
                         low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
                         high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
-                       img.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
+                       img.attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
                       name.html(cityName)
                       var currentDate = dayjs();
                       for (var i = 1; i <= 5; i++){
@@ -179,7 +179,7 @@ function fetchDataAndDisplay(city) {
                           var p1 = $('<p>').text('Temp: '+ temperature2)
                           var p2 = $('<p>').text('Windspeed: '+ windspeed2 +' MPH')
                           var p3 = $('<p>').text('Humidity: '+humidity2 +'%')
-                          var img2 = $('<img>').attr("src", "http://openweathermap.org/img/wn/" + icon2 + ".png")
+                          var img2 = $('<img>').attr("src", "https://openweathermap.org/img/wn/" + icon2 + ".png")
                           var div = $('<div>').addClass("forecast-day").append(h3, img2, p1, p2, p3)
                           forecast.append(div)
                       }
