@@ -28,8 +28,6 @@ if(input.val() === ""){
 
 
 
-
-
 searchBtn.click(()=>{
     var city = input.val().trim();
     city = city.charAt(0).toUpperCase() + city.slice(1);
@@ -76,15 +74,16 @@ searchBtn.click(()=>{
             var div = $('<div>').addClass("forecast-day").append(h3, img2, p1, p2, p3)
             forecast.append(div)
         }
-        console.log(data)
-
+        if (!cityData[cityName]) {
         var pastCityBtn = $("<button>").text(city)
         pastCityBtn.addClass('pastBtn')
         history.append(pastCityBtn)
+
         cityData[cityName] = { name: cityName };
         localStorage.setItem('citydata', JSON.stringify(cityData));
-        pastCityBtn.click(() => weatherbtn(latValue, lonValue))
-         
+        pastCityBtn.click(() => fetchDataAndDisplay(city))
+        } 
+   
         } else{
             alert('City not found')
         }
@@ -98,46 +97,7 @@ searchBtn.click(()=>{
 })
 
 
-function weatherbtn(lat, lon){
-    var weather = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&cnt=6&appid=78da9311b6649705d4159cf6966655ff"
-    fetch(weather)
-    .then((response => response.json()))
-    .then(data => {
-        forecast.empty()
-        for (var i = 1; i <= 5; i++){
-        var icon = data.list[0].weather[0].icon;
-        var cityName = data.city.name
-        var temperature = data.list[i].main.temp;
-        var windspeed = data.list[i].wind.speed;
-        var humidity = data.list[i].main.humidity;
-        currentDate = currentDate.add(1, 'day' )
-        var h3 = $('<h3>').text(currentDate.format('M/DD/YY'))
-        var p1 = $('<p>').text('Temp: '+ temperature)
-        var p2 = $('<p>').text('Windspeed: '+windspeed+' MPH')
-        var p3 = $('<p>').text('Humidity: '+humidity+'%')
-        var img = $('<img>').attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
-        var div = $('<div>').addClass("forecast-day").append(h3, img, p1, p2, p3)
-        forecast.append(div)
-    
-    
-    
-    
-    
-        var icon = data.list[0].weather[0].icon;
-        status.html("todays weather condition " + data.list[0].weather[0].description)
-        windSpeed.html("the windspeed is " + data.list[0].wind.speed + " MPH")
-        temp.html("the tempeture for today is " + data.list[0].main.temp + "℉")  
-        feelsLike.html("it feels like " + data.list[0].main.feels_like + "℉")
-        humid.html("The humidity is " + data.list[0].main.humidity+'%')
-        low.html('the low tempeture for today is ' + data.list[0].main.temp_min + "℉")
-        high.html('the high tempeture for today is ' + data.list[0].main.temp_max + "℉")
-       img.attr("src", "https://openweathermap.org/img/wn/" + icon + ".png")
-      name.html(cityName)
-    
-        }
 
-    })
-}
 
 function fetchDataAndDisplay(city) {
 
