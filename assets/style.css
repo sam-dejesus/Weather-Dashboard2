@@ -15,6 +15,9 @@ header{
     padding-top: 20px;
    
  }
+ main{
+    gap: 10px;
+ }
  .title{
     gap: 10px;
 
@@ -48,6 +51,7 @@ header{
 }
 
 .searchDiv{
+    width: 30%;
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -88,6 +92,7 @@ border: none;
     width: 100%;
 }
 .forecast{
+    width: 70%;
     margin-top: 20px;
     background-color: rgba(255, 255, 255, 0.2);   
 }  
